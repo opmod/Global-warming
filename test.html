@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Basic Embed</title>
+
+    <script type='text/javascript' src='https://10ay.online.tableau.com/javascripts/api/viz_v1.js'></script>
+    <script type="text/javascript">
+        function initViz() {
+            var containerDiv = document.getElementById("vizContainer"),
+                url = "https://10ay.online.tableau.com/t/sensechen/views/_0/sheet0?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no"
+                options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+
+            var viz = new tableau.Viz(containerDiv, url, options);
+            // Create a viz object and embed it in the container div.
+        }
+    </script>
+    
+</head>
+
+<body onload="initViz();">
+    <div class='tableauPlaceholder' style='width: 1265px; height: 472px;'><object class='tableauViz' width='1265' height='472' style='display:none;'><param name='host_url' value='https%3A%2F%2F10ay.online.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='/t/sensechen' /><param name='name' value='_0/sheet0' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='showAppBanner' value='false' /><param name='filter' value='iframeSizedToWindow=true' /></object></div>
+</body>
+
+</html>
